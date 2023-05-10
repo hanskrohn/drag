@@ -18,9 +18,12 @@ function App() {
     event.preventDefault();
     return false;
   }
+  function drag(event) {
+    console.log('hi', event.clientX)
+  }
   return (
     <div style={{minHeight: "100vh"}} onDragOver={dragOver} onDrop={drop}>
-      <div draggable onDragStart={dragStart} style={{left: "0px", top: "0px", position: "absolute"}} id="me">
+      <div draggable onDrag={drag} onDragStart={dragStart} style={{left: "0px", top: "0px", position: "absolute"}} id="me">
         Draggable
       </div>
     </div>
